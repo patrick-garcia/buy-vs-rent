@@ -1,0 +1,172 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+body {
+	background: url('../img/toronto2.jpg') center no-repeat;
+	/*background-size:cover;*/
+}
+
+.wrapper {
+	width: 62%;
+	max-width: 980;
+	margin: 0 auto 80px auto;
+}
+
+header {
+	font-size: 40px;
+	text-align: center;
+	margin-top: 50px;
+	padding: 20px 0 15px 0;
+	font-family: 'Merriweather Sans', sans-serif;
+	font-style: italic;
+	font-weight: 800;
+	background-color: rgba(230,230,250,.9);
+	color: rgba(0,0,0,0.85)
+}
+
+hr {
+	padding: 0;
+	width: 80%;
+}
+
+.main {
+	display: flex;
+}
+
+form {
+	width: 50%;
+	background-color: rgba(230,230,250,.9);
+	
+}
+
+aside {
+	width: 50%;
+	background-color: rgba(230,230,250,.9);
+}
+
+.user-info {
+	margin: 20px 20px 20px 45px;
+	font-family: 'Lato', sans-serif;
+}
+
+.user-info:last-child {
+	margin-bottom: 60px;
+}
+
+label {
+	font-size: 20px;
+}
+
+input {
+	width: 60%;
+	max-width: 200px;
+	margin-top: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	padding: 5px;
+/*}*/
+
+/*hover effect*/
+
+/*input[type=text] {*/
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	outline: none;
+	border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus {
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.slider-default {
+	width: 80%;
+	max-width: 260px;
+	margin: 15px 0 15px 10px;
+}
+
+.ui-slider-range {
+	background: steelblue;
+}
+
+.bar-graph {
+	width: 100%;
+	height: 500px;
+	display: flex;
+	font-family: 'Merriweather Sans', sans-serif;
+	color: whitesmoke;
+}
+
+.left, .right {
+	width: 50%;
+	height: 100%;
+	position: relative;
+}
+
+.rent-bar, .buy-bar {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 74%;
+	height: 100px; /*need to remove and update height on buy-bar*/
+	min-height: 150px;
+	max-height: 450px;
+	background: -moz-linear-gradient(45deg, rgba(167,207,223,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	-webkit-box-shadow: 10px 5px 10px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 10px 5px 10px 0px rgba(0,0,0,0.4);
+	box-shadow: 10px 5px 10px 0px rgba(0,0,0,0.4);
+	border-radius: 7px 7px 0px 0px;
+	-moz-border-radius: 7px 7px 0px 0px;
+	-webkit-border-radius: 7px 7px 0px 0px;
+	transition: height 0.6s ease-in-out;
+	-webkit-transition: height 0.6s ease-in-out;
+	-moz-transition: height 0.6s ease-in-out;
+	text-align: center;
+}
+
+.rent-bar {
+	transform: translate(-55%, 0);
+	height: 166.6px;
+}
+
+.buy-bar {
+	transform: translate(-65%, 0);
+	height: 255.5px;
+}
+
+p.updated-cost {
+	font-size: 36px;
+    margin: 20px 0 0 0;
+    letter-spacing: -2px;
+}
+
+p.label, p.label {
+	font-size: 24px;
+	margin: 24px 0 0 0;
+	letter-spacing: -2px;
+}
+
+aside hr {
+	width: 70%;
+	margin-top: 50px;
+	transform: translate(-3%, 0);
+}
+
+p.message {
+	padding: 20px 40px 0 20px;
+	text-align: center;
+	font-size: 26px;
+	color: rgba(26,26,26,1)
+	font-family: 'Merriweather Sans', sans-serif;
+	font-style: italic;
+}
