@@ -1,0 +1,53 @@
+form {
+  width: 50%;
+  background-color: rgba(230,230,250,.9);  
+
+  .user-info {
+    margin: 20px 20px 20px 45px;
+    font-family: 'Lato', sans-serif;
+
+    &:last-child {
+      margin-bottom: 60px;
+    }
+
+    label {
+      font-size: 20px;
+    }
+
+    input {
+      width: 60%;
+      max-width: 200px;
+      margin-top: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    /*focus effect*/
+
+    input[type=text] {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      outline: none;
+      border: 1px solid #DDDDDD;
+    }
+
+    input[type=text]:focus {
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
+
+    .slider-default {
+      width: 80%;
+      max-width: 260px;
+      margin: 15px 0 15px 10px;
+    }    
+  }
+}
+
+// jQuery UI
+.ui-slider-range {
+  background: steelblue;
+}
