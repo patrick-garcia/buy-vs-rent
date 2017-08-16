@@ -4,4 +4,4 @@
 
 > jQuery & jQueryUI
 
-> patrick.garcia.xyz/js/buy-vs-rent.html
+> http://patrickgarcia.xyz/buy-vs-rent/
