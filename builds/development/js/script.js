@@ -1,4 +1,4 @@
-var app = {};
+let app = {};
 
 app.rent = 1000;
 app.homePrice = 300000;
@@ -14,19 +14,19 @@ app.monthly = 0;
 app.buyMonthlyCalc = function() {
   app.principal = app.homePrice - app.downPayment;
   app.numberOfPayments = app.years * 12;
-  monthlyInt = app.interest / 12;
-  topValue = monthlyInt * Math.pow((1 + monthlyInt), app.numberOfPayments);
-  bottomValue = Math.pow((1 + monthlyInt), app.numberOfPayments) - 1;
-  var buyMonthlyTotal = parseInt(app.principal * (topValue / bottomValue)) + app.condoFee;
+  const monthlyInt = app.interest / 12;
+  const topValue = monthlyInt * Math.pow((1 + monthlyInt), app.numberOfPayments);
+  const bottomValue = Math.pow((1 + monthlyInt), app.numberOfPayments) - 1;
+  const buyMonthlyTotal = parseInt(app.principal * (topValue / bottomValue)) + app.condoFee;
   return buyMonthlyTotal;
 };
 
 app.sentenceCheck = function() {
   if (app.monthly > app.rent) {
-    diff = (app.monthly - app.rent).toLocaleString();
+    const diff = (app.monthly - app.rent).toLocaleString();
     $('p.message').text(`Buying will cost $${diff}/month more than renting`);
   } else {
-    diff = (app.rent - app.monthly).toLocaleString();
+    const diff = (app.rent - app.monthly).toLocaleString();
     $('p.message').text(`Buying will cost $${diff}/month less than renting`);
   };
 };
@@ -35,11 +35,11 @@ app.mainFunction = function() {
   // normal effect
   if (app.rent <= 2700 && app.buyMonthlyCalc() <= 2700) {
     app.monthly = app.buyMonthlyCalc();
-    buyHeight = app.monthly / 6;
+    const buyHeight = app.monthly / 6;
     $('.buy-bar').css('height', buyHeight);
     $('.buy-bar p.updated-cost').text(`$${app.monthly.toLocaleString()}`);
 
-    rentHeight = app.rent / 6;
+    const rentHeight = app.rent / 6;
     $('.rent-bar').css('height', rentHeight);
     $('.rent-bar p.updated-cost').text(`$${app.rent.toLocaleString()}`);
 
@@ -49,11 +49,11 @@ app.mainFunction = function() {
   // rent is max-height - mortgage bar height decreases propotionately
   } else if (app.rent > app.buyMonthlyCalc() && app.rent >= 2700) {
     app.monthly = app.buyMonthlyCalc();
-    buyHeight = (app.monthly / app.rent) * app.maxBarHeight;
+    const buyHeight = (app.monthly / app.rent) * app.maxBarHeight;
     $('.buy-bar').css('height', buyHeight);
     $('.buy-bar p.updated-cost').text(`$${app.monthly.toLocaleString()}`);
 
-    rentHeight = app.rent / 6;
+    const rentHeight = app.rent / 6;
     $('.rent-bar').css('height', rentHeight);
     $('.rent-bar p.updated-cost').text(`$${app.rent.toLocaleString()}`);
 
@@ -63,11 +63,11 @@ app.mainFunction = function() {
   // mortgage is max-height - rent bar height decreases propotionately
   } else {
     app.monthly = app.buyMonthlyCalc();
-    buyHeight = app.monthly / 6;
+    const buyHeight = app.monthly / 6;
     $('.buy-bar').css('height', buyHeight);
     $('.buy-bar p.updated-cost').text(`$${app.monthly.toLocaleString()}`);
     
-    rentHeight = (app.rent / app.monthly) * app.maxBarHeight;
+    const rentHeight = (app.rent / app.monthly) * app.maxBarHeight;
     $('.rent-bar').css('height', rentHeight);
     $('.rent-bar p.updated-cost').text(`$${app.rent.toLocaleString()}`);
 
@@ -78,15 +78,15 @@ app.mainFunction = function() {
 // trigger slider change by field input
 app.infoFromField = function() {
   $('.user-info input').on('change', function() {
-    var sliderId = `#slider-${this.name}`;
-    var $slider = $(sliderId);
+    const sliderId = `#slider-${this.name}`;
+    const $slider = $(sliderId);
     $slider.slider('value', this.value);
     $slider.slider('option', 'slide')(null, { value: $slider.slider('value') });
   });
 };
 
 app.init = function() {
-        // rent
+  // rent
   $('#slider-rent').slider({
     slide: function(event, ui) {
       app.rent = (ui.value);
@@ -142,11 +142,11 @@ app.init = function() {
     range: 'min'
   });
   
-  // iterest rate
+  // interest rate
   $('#slider-interest').slider({
     slide: function(event, ui) {
       app.interest = (ui.value);
-                        intPercent = (app.interest * 100).toFixed(2);
+      const intPercent = (app.interest * 100).toFixed(2);
       $('#interest').val(intPercent);
       app.mainFunction();
     },
@@ -173,9 +173,7 @@ app.init = function() {
   // end of jQueryUI
 
   app.infoFromField();
-
 };
-
 
 $(function() {
   app.init();

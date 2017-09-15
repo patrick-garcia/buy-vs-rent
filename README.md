@@ -1,7 +1,7 @@
 > First javascript project
 
-> Simple mortgage calculator which allows user to compare against current rent expense
+> Simple mortgage calculator comparing to current rent
 
 > jQuery & jQueryUI
 
-> http://patrickgarcia.xyz/buy-vs-rent/
+> http://patrickgarcia.ca/buy-vs-rent/
